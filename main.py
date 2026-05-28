@@ -11,6 +11,11 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    bool = True
+    str1 = "111"
+    str2 = "222"
+    if bool: print_hi(str1 + str2)
+
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
