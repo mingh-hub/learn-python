@@ -23,5 +23,5 @@ print(isinstance(None, float))
 # NoneType 不是直接可用的内置名称，有如下三种写法
 print(isinstance(None, type(None)))
 print(isinstance(None, None.__class__))
-print(isinstance(None, types.NoneType)) # 这个要岛包 import types
+print(isinstance(None, types.NoneType)) # 这个要导包 import types
 
