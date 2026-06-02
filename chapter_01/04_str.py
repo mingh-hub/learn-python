@@ -19,11 +19,22 @@ print(str3)
 
 ## 字符串拼接
 
-### + 号拼接（无法拼接字符串与非字符串）
+### + 号拼接（无法拼接字符串与非字符串，比如 int 类型）
 str_connect1 = "你好：" + "Java"
 print(str_connect1)
+
+name = "小明"
+age = 18
+profession = "软件开发"
+
+print(name + str(age) + profession)
 
 ### 多个字符串字面量可以直接写
 str_connect2 = "你好：" "Python"
 print(str_connect2)
 
+### 字符串拼接问题
+# 1. 拼接繁琐
+# 2. 破坏字符串完整性
+# 3. 类型转换
+# 4. 如何处理？ -> 字符串格式化（05_str_format.py）
