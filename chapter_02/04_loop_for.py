@@ -27,7 +27,7 @@ for char in msg:
 3. range(start, end, step)：获取一个从 start 开始到 end 结束，step 步长的数字序列（不含 end）
 """
 
-## 案例：计算 100-500 之间所有 3 的倍数的数字和
+## 案例1：计算 100-500 之间所有 3 的倍数的数字和
 coll = range(100, 501)
 add = 0
 for i in coll:
