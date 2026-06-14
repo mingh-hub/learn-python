@@ -43,6 +43,8 @@ print(s.strip("abc")) # Hello
 print("=================chars 不是前缀或后缀=================")
 s = "ababaHelloabba"
 print(s.strip("ab")) # Hello
+s = "abcabaHelloabba"
+print(s.strip("ab")) # cabaHello
 
 """
 6. 常见应用场景
