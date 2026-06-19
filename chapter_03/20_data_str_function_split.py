@@ -67,3 +67,4 @@ print(value)
 - sep 指定为空字符串 "" 会报 ValueError。
 - 需要从右侧限制分割次数时使用 rsplit()。
 """
+# print(line.split("")) # ValueError: empty separator
