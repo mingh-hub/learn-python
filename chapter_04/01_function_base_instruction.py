@@ -259,11 +259,26 @@ print(calculate_rectangle_area.__doc__)
 help(calculate_rectangle_area)
 
 """
-5. 函数的嵌套调用
+5. 函数的嵌套调用与调用栈
     一个函数可以调用另一个函数，这种方式称为函数的嵌套调用。
-    执行到函数调用时，会先进入被调用的函数；被调用函数结束后，再继续执行原函数。
+    Python 使用调用栈记录正在执行但尚未结束的函数。
+    每次调用函数都会创建一个栈帧，用于保存函数的参数、局部变量和返回位置，并将其压入栈顶。
+    函数执行结束后，对应的栈帧会从栈顶弹出，程序回到上一个栈帧记录的位置继续执行。
+    调用栈遵循 LIFO（Last In, First Out，后进先出），也就是 FILO（First In, Last Out，先进后出）。
+
+    average_numbers 调用 sum_numbers 时，调用栈的变化如下：
+    （1）average_numbers 被调用，其栈帧入栈。
+    （2）执行到 sum_numbers，其栈帧入栈，位于 average_numbers 栈帧之上。
+    （3）sum_numbers 最后入栈，因此最先执行结束并出栈，将结果返回给 average_numbers。
+    （4）average_numbers 恢复执行，计算平均值，最后出栈并返回结果。
+
+    sum_numbers 执行期间的调用栈：
+
+        栈顶 -> sum_numbers
+                average_numbers
+        栈底
 """
-print("=================5. 函数的嵌套调用=================")
+print("=================5. 函数的嵌套调用与调用栈=================")
 
 
 def sum_numbers(number1, number2, number3):
@@ -279,11 +294,13 @@ average = average_numbers(80, 90, 100)
 print(f"平均分：{average}")
 
 """
-5.1 在实参中嵌套调用函数
+5.1 在实参中调用函数
     函数的返回值可以直接作为另一个函数的实参。
-    嵌套调用按照从内到外的顺序执行。
+    执行 square(double(3)) 时，Python 必须先得到实参的值，因此会先调用 double。
+    double 的栈帧入栈，返回 6 后出栈；随后才调用 square，square 的栈帧再入栈和出栈。
+    这个过程体现了表达式从内到外的求值顺序，double 和 square 的栈帧不会同时存在于调用栈中。
 """
-print("=================5.1 在实参中嵌套调用函数=================")
+print("=================5.1 在实参中调用函数=================")
 
 
 def double(number):
