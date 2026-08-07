@@ -237,18 +237,19 @@ print(difference)
 4. 函数的说明文档
     文档字符串（docstring）用于说明函数的功能、参数和返回值。
     文档字符串应写在函数体的第一行，并使用三引号包裹。
+    Sphinx 风格使用 :param parameter: 说明参数，使用 :return: 说明返回值。
     可以通过 function_name.__doc__ 查看，也可以使用 help(function_name) 查看帮助信息。
 """
 print("=================4. 函数的说明文档=================")
 
 
-def calculate_rectangle_area(length, width):
+def calculate_rectangle_area(length: float, width: float) -> float:
     """
     计算长方形的面积。
 
-    length：长方形的长。
-    width：长方形的宽。
-    return：长方形的面积。
+    :param length: 长方形的长
+    :param width: 长方形的宽
+    :return: 长方形的面积
     """
     return length * width
 
