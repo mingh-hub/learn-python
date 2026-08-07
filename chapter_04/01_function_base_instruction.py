@@ -256,7 +256,7 @@ def calculate_rectangle_area(length: float, width: float) -> float:
 
 print(calculate_rectangle_area(5, 3))
 print(calculate_rectangle_area.__doc__)
-# help(calculate_rectangle_area)
+help(calculate_rectangle_area)
 
 """
 5. 函数的嵌套调用
