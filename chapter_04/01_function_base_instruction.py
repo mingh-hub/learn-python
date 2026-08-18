@@ -73,7 +73,7 @@ introduce("Alice", 20)
 2.1 位置参数和关键字参数
     位置参数：实参按照位置依次传给对应的形参。
     关键字参数：调用时使用 parameter=value，可以不按照形参顺序传递。
-    一次调用中，位置参数必须写在关键字参数前面。
+    一次调用中，位置参数和关键字参数都存在，则位置参数必须写在关键字参数前面。
 """
 print("=================2.1 位置参数和关键字参数=================")
 
@@ -84,6 +84,7 @@ def print_student(name, age, city):
 
 print_student("Alice", 20, "Shanghai")
 print_student(city="Beijing", name="Bob", age=22)
+print_student("Tom", city="Beijing", age=22)
 
 """
 2.2 默认参数
