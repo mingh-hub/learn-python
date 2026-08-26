@@ -15,7 +15,7 @@ from time import perf_counter
 1. 函数参数详解
     形参是定义函数时声明的变量，实参是调用函数时传入的数据。
     调用函数时，Python 会按照函数签名把实参与形参进行绑定。
-    参数可以按照位置或名称传递，还可以设置默认值、接收不定长数据和限制传递方式。
+    参数可以按照位置（位置参数）或名称传递（关键字参数），还可以设置默认值、接收不定长数据和限制传递方式。
 """
 print("=================1. 函数参数详解=================")
 
@@ -73,13 +73,13 @@ print(create_user("Cindy", city="杭州", age=19))
 print("=================1.3 默认参数=================")
 
 
-def calculate_price(price, discount=1, shipping_fee=0):
+def calculate_price(price, discount=1.0, shipping_fee = .0):
     return price * discount + shipping_fee
 
 
 print(calculate_price(100))
 print(calculate_price(100, 0.9))
-print(calculate_price(100, shipping_fee=10, discount=0.8))
+print(calculate_price(100, shipping_fee=10.5, discount=0.8))
 
 
 def create_default_config():
@@ -87,7 +87,7 @@ def create_default_config():
     return {"language": "中文"}
 
 
-def show_config(config=create_default_config()):
+def show_config(config=create_default_config()): # 演示函数也可以以作为参数对象传递，建议写成 None，函数体内判断 None，然后进行处理
     print(config)
 
 
